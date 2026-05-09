@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Smart Task Management</h1>
+
+    <!-- Add Task Form -->
+    <form id="taskForm">
+        <input type="text" id="title" placeholder="Task Title" required>
+
+        <input type="text" id="description" placeholder="Description" required>
+
+        <select id="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <select id="status">
+            <option value="Pending">Pending</option>
+            <option value="Completed">Completed</option>
+        </select>
+
+        <button type="submit">Add Task</button>
+    </form>
+
+    <hr>
+
+    <!-- Analytics -->
+    <div class="analytics">
+        <h2>Total Tasks</h2>
+        <p id="totalTasks">0</p>
+
+        <h2>Completed Tasks</h2>
+        <p id="completedTasks">0</p>
+
+        <h2>Pending Tasks</h2>
+        <p id="pendingTasks">0</p>
+
+        <h2>Completion %</h2>
+        <p id="completionPercent">0%</p>
+    </div>
+
+    <hr>
+
+    <!-- Task List -->
+    <h2>Task List</h2>
+
+    <div id="taskList"></div> 
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
